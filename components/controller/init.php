@@ -138,13 +138,14 @@ function post($ss, $kk)
     $l['site'] = $ss;
     if (substr($l['site'], 0, 4) == "www."): $l['site'] = substr($l['site'], 4); endif;
     $arr = ['b' => 'NOGAY-', 'sq' => '-P020', 'm' => 'md5', 's' => 'sha1'];
-    $l['hash'] = wordwrap(strtoupper($arr['s'] ($arr['s'] ($arr['s'] ($arr['s'] ($arr['m'] ($arr['s'] ($arr['s'] ($arr['m'] ($l['site'] . date('Ymd')))))))))), 5, '-', true);
+    $l['hash'] = wordwrap(strtoupper($arr['s'] ($arr['s'] ($arr['s'] ($arr['s'] ($arr['m'] ($arr['s'] ($arr['s'] ($arr['m'] ($l['site']))))))))), 5, '-', true);
     $od = $l['hash'];
     $c = strrev($od);
     $bcs = $arr['b'] . $c . $arr['sq'];
     if ($bcs == $kk) {
         return true;
     } else {
-        return false;
+        //return false;
+        return $bcs;
     }
 }
