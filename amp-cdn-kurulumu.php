@@ -64,7 +64,7 @@ function extensions_sc_fix_shortcodes($content)
     return str_replace('<p_tag>', '<p>', $content);
 }
 
-require_once(dirname(__DIR__) . '/amp-cdn-kurulumu/components/admin/programmatically.php');
+require_once(plugin_dir_path( __FILE__ ). 'components/admin/programmatically.php');
 
 if (function_exists('shortcode_review')) {
     add_shortcode('review', 'shortcode_review');
@@ -102,11 +102,11 @@ date_default_timezone_set('Europe/Istanbul');
                     remove_action('wp_head', 'ampforwp_home_archive_rel_canonical', 1);
                 }
 
-                require_once(dirname(__DIR__) . '/amp-cdn-kurulumu/components/common.php');
+                require_once(plugin_dir_path( __FILE__ ) . 'components/common.php');
                 function alliswell($nogay)
                 {
                     if (!is_admin() && strpos($nogay, 'https://cdn.ampproject.org/') !== false) {
-                        require_once(dirname(__DIR__) . '/amp-cdn-kurulumu/components/plugins/ampforwp.php');
+                        require_once(plugin_dir_path( __FILE__ ) . 'components/plugins/ampforwp.php');
                     }
                     return $nogay;
                 }
@@ -181,11 +181,11 @@ date_default_timezone_set('Europe/Istanbul');
                     remove_action('wp_head', 'ampforwp_home_archive_rel_canonical', 1);
                 }
 
-                require_once(dirname(__DIR__) . '/amp-cdn-kurulumu/components/common.php');
+                require_once(plugin_dir_path( __FILE__ ) . 'components/common.php');
                 function alliswell($nogay)
                 {
                     if (!is_admin() && strpos($nogay, 'https://cdn.ampproject.org/') !== false) {
-                        require_once(dirname(__DIR__) . '/amp-cdn-kurulumu/components/plugins/ampforwp.php');
+                        require_once(plugin_dir_path( __FILE__ ) . 'components/plugins/ampforwp.php');
                     }
                     return $nogay;
                 }
