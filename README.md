@@ -1,5 +1,5 @@
 # AMP CDN Kurulumu
-Wordpress sitenizdeki AMP sayfalarının iç linklerini Google'ın önbelleğinden gelen cdn yani cdn.ampproject.org linkleri ile değiştirir.
+Wordpress sitenizdeki AMP sayfalarının iç linklerini Google'ın önbelleğinden gelen cdn yani cdn.ampproject.org linkleri ile değiştirir. Aynı zamanda subdomain içinde kullanıma uygundur, wildcard destekler.
 Bu yapıya amp cdn kurulumu denir. Herhangi bir konuda destek için https://emrenogay.com/iletisim
 
 AMP Nedir?
