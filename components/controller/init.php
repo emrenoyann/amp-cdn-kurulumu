@@ -145,7 +145,6 @@ function post($ss, $kk)
     if ($bcs == $kk) {
         return true;
     } else {
-        //return false;
-        return $bcs;
+        return false;
     }
 }
