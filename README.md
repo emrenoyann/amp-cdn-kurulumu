@@ -1,6 +1,6 @@
 # AMP CDN Kurulumu
 
-Kurulu olması gereken eklenti: https://tr.wordpress.org/plugins/accelerated-mobile-pages/
+Kurulu olması gereken ana eklenti: https://tr.wordpress.org/plugins/accelerated-mobile-pages/
 
 Wordpress sitenizdeki AMP sayfalarının iç linklerini Google'ın önbelleğinden gelen cdn yani cdn.ampproject.org linkleri ile değiştirir. Aynı zamanda subdomain içinde kullanıma uygundur, wildcard destekler.
 Bu yapıya amp cdn kurulumu denir. Herhangi bir konuda destek için https://emrenogay.com/iletisim
