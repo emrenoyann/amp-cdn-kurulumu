@@ -133,9 +133,13 @@ function content_delivery_function()
                             </select>
                         </td>
                     </tr>
+						
                     <tr>
-                        <td>&nbsp;</td>
+                        <td><b>Varsa subdomain yazın</b></td>
                     </tr>
+						<tr>
+							<td><input type="text" name="subdomain" placeholder="<?php echo get_option('cdn_subdomain');?>"></td>
+						</tr>
                     <tr>
                         <td>
                             <?php
@@ -188,6 +192,15 @@ function content_delivery_function()
             $chooseTheme = sanitize_text_field($_POST['choose-theme']);
             update_option('active_is_cdn', $userChoose);
             update_option('amp_cdn_theme', $chooseTheme);
+			if(empty(get_option('cdn_subdomain'))){
+				if(!empty($_POST['subdomain'])){
+					add_option('cdn_subdomain',$_POST['subdomain']);
+				}
+			}else if(!empty(get_option('cdn_subdomain'))){
+				if(!empty($_POST['subdomain'])){
+					update_option('cdn_subdomain',$_POST['subdomain']);
+				}
+			}
             if ($userChoose == 1) {
                 echo '<div class="updated"><p><strong>AMP Yapısı aktif olarak kaydedildi. Sayfayı yenileyin.</strong></p></div>';
             } else if ($userChoose == 0) {
