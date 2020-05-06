@@ -66,5 +66,5 @@ if (!function_exists('_ampforwp_get_author_details')) {
 	$nogay = str_replace('<a class="post-read-more" href="'.get_home_url(), '<a class="post-read-more" href="'.createProject(), $nogay);
 	$nogay = str_replace('<a class="page-numbers" href="'.get_home_url(), '<a class="page-numbers" href="'.createProject(), $nogay);
 	$nogay = str_replace('<a class="next page-numbers" href="'.get_home_url(), '<a class="next page-numbers" href="'.createProject(), $nogay);
-	$nogay = str_replace('<a href="'.get_home_url(), '<a href="'.createProject(), $nogay);
+	$nogay = str_replace('href="'.get_home_url(), 'href="'.createProject(), $nogay);
 	$nogay = str_replace($search, $replace, $nogay);
