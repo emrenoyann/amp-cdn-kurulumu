@@ -54,25 +54,48 @@ if (date('d-m-Y H:i:s') == '0000:0000:0000') {
 function newCdnCanonical()
 {
     if (is_home()) {
-        $main = 'https://' . $_SERVER['HTTP_HOST'];
-        echo is_ssl() ? '<link rel="amphtml" href="' . $main . '/amp/" />' : '<link rel="amphtml" href="http://' . $_SERVER['HTTP_HOST'] . '/amp/" />';
-
+        if (!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' ') {
+            echo is_ssl() ? '<link rel="amphtml" href="https://' . get_option('cdn_subdomain') . '" />' : '<link rel="amphtml" href="http://' . get_option('cdn_subdomain') . '" />';
+        } else {
+			echo is_ssl() ? '<link rel="amphtml" href="https://' . $_SERVER['HTTP_HOST'] . '" />' : '<link rel="amphtml" href="http://' . $_SERVER['HTTP_HOST'] . '" />';
+        }
     } else {
-        $urlss = $_SERVER["REQUEST_URI"];
-        echo '<link rel="amphtml" href="' . get_site_url() . $urlss . 'amp/" />';
+		if (!empty(get_option('cdn_subdomain')) || get_option('cdn_subdomain') != ' ') {
+            echo is_ssl() ? '<link rel="amphtml" href="https://' . get_option('cdn_subdomain') . $_SERVER['REQUEST_URI'] . '"/>' : '<link rel="amphtml" href="http://' . get_option('cdn_subdomain') . $_SERVER['REQUEST_URI'] . '"/>';
+        } else {
+			echo is_ssl() ? '<link rel="amphtml" href="https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']. '" />' : '<link rel="amphtml" href="http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '" />';
+        }
+
     }
 }
 
 add_action('wp_head', 'newCdnCanonical');
 
+function _baseURL(){
+	if(is_ssl()){
+		return 'https://'.$_SERVER['HTTP_HOST'];
+	}else{
+		return 'http://'.$_SERVER['HTTP_HOST'];
+	}
+}
+
+function _is_ssl(){
+	if(is_ssl()){
+		return 'https://';
+	}else{
+		return 'http://';
+	}
+}
+
+
 function createProject()
 {
-    $url = get_site_url();
+    $url = $_SERVER['HTTP_HOST'];
     $ex = str_replace('.', '-', $url);
     $exx = $ex . '.cdn.ampproject.org';
     if (strstr($exx, 'https')) {
-        return $exx . '/c/s/' . str_replace('https://', '', get_site_url());
+        return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
     } else {
-        return $exx . '/c/' . str_replace('http://', '', get_site_url());
+        return $exx . '/c/' . $_SERVER['HTTP_HOST'];
     }
 }
