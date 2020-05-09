@@ -59,13 +59,16 @@ if (!function_exists('_ampforwp_get_author_details')) {
     }
 }
 
-    $replace = 'action="'._is_ssl().createProject().'/amp/"';
-    $search = 'action="'._is_ssl().$_SERVER['HTTP_HOST'].'"';
-	$nogay = str_replace('<a href="'._baseURL(), '<a href="'._is_ssl().createProject(), $nogay);
-	$nogay = str_replace('<a class="img-holder" href="'._baseURL(), '<a class="img-holder" href="'._is_ssl().createProject(), $nogay);
-	$nogay = str_replace('<a class="post-read-more" href="'._baseURL(), '<a class="post-read-more" href="'._is_ssl().createProject(), $nogay);
-	$nogay = str_replace('<a class="page-numbers" href="'._baseURL(), '<a class="page-numbers" href="'._is_ssl().createProject(), $nogay);
-	$nogay = str_replace('<a class="next page-numbers" href="'._baseURL(), '<a class="next page-numbers" href="'._is_ssl().createProject(), $nogay);
-	$nogay = str_replace('href="'._baseURL(), 'href="'._is_ssl().createProject(), $nogay);
-	$nogay = str_replace($search, $replace, $nogay);
-
+	if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
+		
+		$search = 'action="'._is_ssl().$_SERVER['HTTP_HOST'].'"';
+		$replace = 'action="'._is_ssl().createProject().'/amp/"';
+		$nogay = str_replace('href="'._baseURL(), 'href="'._is_ssl().createProject(), $nogay);
+		$nogay = str_replace($search, $replace, $nogay);
+		
+	}else{
+		$search = 'action="'._is_ssl().get_option('cdn_subdomain').'"';
+		$replace = 'action="'._is_ssl().createProject().'/amp/"';
+		$nogay = str_replace('href="'.get_option('cdn_subdomain'), 'href="'._is_ssl().createProject(), $nogay);
+		$nogay = str_replace($search, $replace, $nogay);
+	}
