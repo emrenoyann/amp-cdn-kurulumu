@@ -55,15 +55,15 @@ function newCdnCanonical()
 {
     if (is_home()) {
         if (!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' ') {
-            echo is_ssl() ? '<link rel="amphtml" href="https://' . get_option('cdn_subdomain') . '" />' : '<link rel="amphtml" href="http://' . get_option('cdn_subdomain') . '" />';
+            echo is_ssl() ? '<link rel="amphtml" href="https://' . get_option('cdn_subdomain') . '/amp/" />' : '<link rel="amphtml" href="http://' . get_option('cdn_subdomain') . '/amp/" />';
         } else {
-			echo is_ssl() ? '<link rel="amphtml" href="https://' . $_SERVER['HTTP_HOST'] . '" />' : '<link rel="amphtml" href="http://' . $_SERVER['HTTP_HOST'] . '" />';
+			echo is_ssl() ? '<link rel="amphtml" href="https://' . $_SERVER['HTTP_HOST'] . '/amp/" />' : '<link rel="amphtml" href="http://' . $_SERVER['HTTP_HOST'] . '/amp/" />';
         }
     } else {
 		if (!empty(get_option('cdn_subdomain')) || get_option('cdn_subdomain') != ' ') {
-            echo is_ssl() ? '<link rel="amphtml" href="https://' . get_option('cdn_subdomain') . $_SERVER['REQUEST_URI'] . '"/>' : '<link rel="amphtml" href="http://' . get_option('cdn_subdomain') . $_SERVER['REQUEST_URI'] . '"/>';
+            echo is_ssl() ? '<link rel="amphtml" href="https://' . get_option('cdn_subdomain') . $_SERVER['REQUEST_URI'] . '/amp/"/>' : '<link rel="amphtml" href="http://' . get_option('cdn_subdomain') . $_SERVER['REQUEST_URI'] . '/amp/"/>';
         } else {
-			echo is_ssl() ? '<link rel="amphtml" href="https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']. '" />' : '<link rel="amphtml" href="http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '" />';
+			echo is_ssl() ? '<link rel="amphtml" href="https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']. '/amp/" />' : '<link rel="amphtml" href="http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '/amp/" />';
         }
 
     }
@@ -87,15 +87,57 @@ function _is_ssl(){
 	}
 }
 
-
+/*
 function createProject()
 {
     $url = $_SERVER['HTTP_HOST'];
     $ex = str_replace('.', '-', $url);
     $exx = $ex . '.cdn.ampproject.org';
-    if (strstr($exx, 'https')) {
-        return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
+    if (strstr($exx, 'https') || is_ssl()) {
+		if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
+			return $exx . '/c/s/' . get_option('cdn_subdomain');
+	}else{
+			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
+		}
+		
     } else {
-        return $exx . '/c/' . $_SERVER['HTTP_HOST'];
+        if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
+			return $exx . '/c/' . get_option('cdn_subdomain');
+		}else{
+			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
+		}
     }
+}*/
+
+function createProject(){
+	if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
+		$url = get_option('cdn_subdomain');
+		$ex = str_replace('.', '-', $url);
+		$exx = $ex . '.cdn.ampproject.org';
+		if(is_ssl()){
+			return $exx . '/c/' . get_option('cdn_subdomain');
+		}else{
+			return $exx . '/c/' . get_option('cdn_subdomain');
+		}
+	}else{
+		$url = $_SERVER['HTTP_HOST'];
+		$ex = str_replace('.', '-', $url);
+		$exx = $ex . '.cdn.ampproject.org';
+		if(is_ssl()){
+			return $exx . '/c/' . $_SERVER['HTTP_HOST'];
+		}else{
+			return $exx . '/c/' . $_SERVER['HTTP_HOST'];
+		}
+	}
+}
+
+if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
+	if(!is_ssl()){
+		update_option( 'siteurl', 'http://'.get_option('cdn_subdomain') );
+		update_option( 'home', 'http://'.get_option('cdn_subdomain') );
+	}else{
+		update_option( 'siteurl', 'https//'.get_option('cdn_subdomain') );
+		update_option( 'home', 'https://'.get_option('cdn_subdomain') );
+	}
+	
 }
