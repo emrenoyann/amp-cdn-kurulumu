@@ -190,3 +190,4 @@ function force(){
                  <p>Kullandığınız AMP CDN Kurulumu eklentisinin 7 günlük deneme süresi <b>sona erdi.</b> Satın almak için <a target="_blank" href="https://emrenogay.com/iletisim/">iletişime</a> geçin.</p>
              </div>';
 };
+
