@@ -133,12 +133,12 @@ function content_delivery_function()
                             </select>
                         </td>
                     </tr>
-						
+					
                     <tr>
                         <td><b>Varsa subdomain yazın</b></td>
                     </tr>
 						<tr>
-							<td><input type="text" name="subdomain" placeholder="<?php echo get_option('cdn_subdomain');?>"></td>
+							<td><input type="text" name="subdomain" onclick="return confirm('Eğer sunucunuzda wildcard aktifse bu özelliği aktif edin. Bu özellik sayesinde siteniz, girdiğiniz subdomain üzerinden açılacak. Wildcard aktif değilse siteniz bozulabilir.')" placeholder="<?php echo get_option('cdn_subdomain');?>"></td>
 						</tr>
                     <tr>
                         <td>
@@ -156,6 +156,13 @@ function content_delivery_function()
                 <hr>
                 <h2>Sıkça Sorulan Sorular</h2>
                 <ul>
+					<li>
+						<strong>Subdomain Özelliği Hakkında <span style="color:#ff0000;">Önemli Not</span></strong>
+					</li>
+					<li>
+						Subdomain özelliğini açtığınızda, sitenizin AMP için tüm iç linkleri girdiğiniz domain için değişir. Bu değişim sonrası siteniz o domain üzerinden hizmet vermeye başlar. <strong>Eğer sunucunuzda wildcard yapısı yoksa, bu özellik sitenizi bozabilir. Eğer değişikliği geri almak istiyorsanız kutuya 1 boşluk koyup kaydedin.</strong>
+					</li>
+					<hr>
                     <li>
                         <strong>Eklenti Sadece AMP for WP ile mi Çalışıyor?</strong>
                     </li>
