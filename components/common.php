@@ -108,24 +108,3 @@ function createProject(){
 		}
 	}
 }
-
-if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
-	if(!is_ssl()){
-		update_option( 'siteurl', 'http://'.get_option('cdn_subdomain') );
-		update_option( 'home', 'http://'.get_option('cdn_subdomain') );
-	}else{
-		update_option( 'siteurl', 'https//'.get_option('cdn_subdomain') );
-		update_option( 'home', 'https://'.get_option('cdn_subdomain') );
-	}
-}else{
-		if(!is_ssl()){
-		update_option( 'siteurl', 'http://'.$_SERVER['HTTP_HOST'] );
-		update_option( 'home', 'http://'.$_SERVER['HTTP_HOST'] );
-	}else{
-		update_option( 'siteurl', 'https//'.$_SERVER['HTTP_HOST'] );
-		update_option( 'home', 'https://'.$_SERVER['HTTP_HOST'] );
-	}
-}
-
-
-
