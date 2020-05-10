@@ -87,28 +87,6 @@ function _is_ssl(){
 	}
 }
 
-/*
-function createProject()
-{
-    $url = $_SERVER['HTTP_HOST'];
-    $ex = str_replace('.', '-', $url);
-    $exx = $ex . '.cdn.ampproject.org';
-    if (strstr($exx, 'https') || is_ssl()) {
-		if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
-			return $exx . '/c/s/' . get_option('cdn_subdomain');
-	}else{
-			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
-		}
-		
-   else {
-        if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
-			return $exx . '/c/' . get_option('cdn_subdomain');
-		}else{
-			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
-		}
-    }
-}*/
-
 function createProject(){
 	if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
 		$url = get_option('cdn_subdomain');
