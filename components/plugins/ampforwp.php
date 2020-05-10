@@ -72,3 +72,4 @@ if (!function_exists('_ampforwp_get_author_details')) {
 		$nogay = str_replace('href="'.get_option('cdn_subdomain'), 'href="'._is_ssl().createProject(), $nogay);
 		$nogay = str_replace($search, $replace, $nogay);
 	}
+
