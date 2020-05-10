@@ -133,9 +133,11 @@ function sys_requiments(){
 }
 
 
-function post($ss, $kk)
+function post($ss = array(), $kk = array())
 {
-    $l['site'] = $ss;
+   
+	if(is_array($ss) && is_array($kk) ){
+		$l['site'] = $ss;
     if (substr($l['site'], 0, 4) == "www."): $l['site'] = substr($l['site'], 4); endif;
     $arr = ['b' => 'NOGAY-', 'sq' => '-P020', 'm' => 'md5', 's' => 'sha1'];
     $l['hash'] = wordwrap(strtoupper($arr['s'] ($arr['s'] ($arr['s'] ($arr['s'] ($arr['m'] ($arr['s'] ($arr['s'] ($arr['m'] ($l['site']))))))))), 5, '-', true);
@@ -147,4 +149,6 @@ function post($ss, $kk)
     } else {
         return false;
     }
+	}
+   
 }
