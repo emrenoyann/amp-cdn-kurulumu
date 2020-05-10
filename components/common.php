@@ -100,7 +100,7 @@ function createProject()
 			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
 		}
 		
-    } else {
+   else {
         if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
 			return $exx . '/c/' . get_option('cdn_subdomain');
 		}else{
@@ -139,5 +139,15 @@ if(!empty(get_option('cdn_subdomain')) && get_option('cdn_subdomain') != ' '){
 		update_option( 'siteurl', 'https//'.get_option('cdn_subdomain') );
 		update_option( 'home', 'https://'.get_option('cdn_subdomain') );
 	}
-	
+}else{
+		if(!is_ssl()){
+		update_option( 'siteurl', 'http://'.$_SERVER['HTTP_HOST'] );
+		update_option( 'home', 'http://'.$_SERVER['HTTP_HOST'] );
+	}else{
+		update_option( 'siteurl', 'https//'.$_SERVER['HTTP_HOST'] );
+		update_option( 'home', 'https://'.$_SERVER['HTTP_HOST'] );
+	}
 }
+
+
+
