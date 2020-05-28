@@ -1,5 +1,9 @@
 <?php
 
+if(empty(get_option('ampcdn_lang'))){
+    update_option('ampcdn_lang',1);
+}
+
 if (get_option('ampcdn_lang') == 1) {
     $lang = [
         'dil_sec' => 'Dil Seçin',
