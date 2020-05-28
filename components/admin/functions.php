@@ -165,6 +165,7 @@ function _ampforwp_add_custom_rewrite_rules() {
     }
 
 }
+
 $taxonomies = '';
 if ( $taxonomies ) {
     $taxonomySlug = '';

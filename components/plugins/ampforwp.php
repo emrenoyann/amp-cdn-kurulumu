@@ -1,6 +1,5 @@
 <?php
 
-
 if (!function_exists('_ampforwp_get_author_page_url')) {
     function _ampforwp_get_author_page_url()
     {
@@ -9,12 +8,26 @@ if (!function_exists('_ampforwp_get_author_page_url')) {
         $author_page_url = '';
         $author_id = get_the_author_meta('ID');
         $author_page_url = get_author_posts_url($author_id);
-        
+
         if (isset($redux_builder_amp['ampforwp-archive-support']) && $redux_builder_amp['ampforwp-archive-support']) {
             $author_page_url = ampforwp_url_controller($author_page_url);
         }
         return $author_page_url;
     }
+}
+function _find($finder)
+{
+    if (strpos($finder, 'https://cdn.ampproject.org/') !== false) {
+        $finder = str_replace('<a href="' . get_home_url(), '<a href="' . _is_ssl() . createProject(), $finder);
+        $n = str_replace(['http:', 'https:'], ['', ''], get_home_url());
+        $finder = str_replace('action="' . $n, 'action="https://' . createProject() . '/amp/', $finder);
+    }
+    if(get_option('cdn_subdomain') == ' ' || empty(get_option('cdn_subdomain'))){
+		$finder = str_replace('<link rel="amphtml" href="' . get_home_url(), '<link rel="amphtml" href="'._is_ssl(). $_SERVER['HTTP_HOST'], $finder);
+	}else{
+		$finder = str_replace('<link rel="amphtml" href="' . get_home_url(), '<link rel="amphtml" href="'._is_ssl(). get_option('cdn_subdomain'), $finder);
+	}
+    return $finder;
 }
 
 if (!function_exists('_ampforwp_get_author_details')) {
@@ -58,9 +71,3 @@ if (!function_exists('_ampforwp_get_author_details')) {
         }
     }
 }
-
-		$search = 'action="'._is_ssl().$_SERVER['HTTP_HOST'].'"';
-		$replace = 'action="'._is_ssl().createProject().'/amp/"';
-		$nogay = str_replace('href="'._baseURL(), 'href="'._is_ssl().createProject(), $nogay);
-		$nogay = str_replace($search, $replace, $nogay);
-	

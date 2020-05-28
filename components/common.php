@@ -51,6 +51,7 @@ if (date('d-m-Y H:i:s') == '0000:0000:0000') {
     }
 }
 
+
 function newCdnCanonical()
 {
     if (is_home()) {
@@ -93,18 +94,19 @@ function createProject(){
 		$ex = str_replace('.', '-', $url);
 		$exx = $ex . '.cdn.ampproject.org';
 		if(is_ssl()){
-			return $exx . '/c/' . get_option('cdn_subdomain');
+			return $exx . '/c/s/' . get_option('cdn_subdomain');
 		}else{
-			return $exx . '/c/' . get_option('cdn_subdomain');
+			return $exx . '/c/s/' . get_option('cdn_subdomain');
 		}
 	}else{
 		$url = $_SERVER['HTTP_HOST'];
 		$ex = str_replace('.', '-', $url);
 		$exx = $ex . '.cdn.ampproject.org';
 		if(is_ssl()){
-			return $exx . '/c/' . $_SERVER['HTTP_HOST'];
+			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
 		}else{
-			return $exx . '/c/' . $_SERVER['HTTP_HOST'];
+			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
 		}
 	}
 }
+

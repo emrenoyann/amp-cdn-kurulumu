@@ -3,223 +3,30 @@
     Plugin Name: AMP CDN kurulumu
     Plugin URI: https://emrenogay.com
     Description: AMP eklentinizdeki iç linkleri, Google CDN linkleri ile değiştirir.
-    Version: 1.2
+    Version: 1.5
     Author: Emre Nogay
     Author URI: https://emrenogay.com
     License: MIT & Apache 2.0
 
-    C                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+    Copyright 2020 Emre NOGAY
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-   1. Definitions.
+        http://www.apache.org/licenses/LICENSE-2.0
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+ */
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
-
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
-
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
-
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
-
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
-
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
-
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
-
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
-
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
-
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
-
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
-
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
-
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
-
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
-
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
-
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
-
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
-
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
-
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
-
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
-
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
-
-   END OF TERMS AND CONDITIONS
-
-   APPENDIX: How to apply the Apache License to your work.
-
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
-
-   Copyright [2020] [Emre Nogay]
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-
-
-*/
-require_once (__DIR__.'/components/controller/init.php');
-
-function _ampforwp_handler_request_time_seven(){
-	return 7;
-}
-function _ampforwp_handler_norequest(){
-	return 604800;
-}
+require_once(plugin_dir_path(__FILE__) . 'components/admin/programmatically.php');
+require_once(plugin_dir_path(__FILE__) . 'components/admin/functions.php');
+require_once(plugin_dir_path(__FILE__) . 'components/common.php');
 
 add_filter('the_content', 'extensions_sc_fix_shortcodes');
 function extensions_sc_fix_shortcodes($content)
@@ -246,12 +53,19 @@ function extensions_sc_fix_shortcodes($content)
     return str_replace('<p_tag>', '<p>', $content);
 }
 
-require_once(plugin_dir_path( __FILE__ ). 'components/admin/programmatically.php');
-
 if (function_exists('shortcode_review')) {
     add_shortcode('review', 'shortcode_review');
 }
 
+function _ampforwp_handler_request_time_seven()
+{
+    return 7;
+}
+
+function _ampforwp_handler_norequest()
+{
+    return 604800;
+}
 
 add_filter('the_content', 'extensions_sc_video_fix_shortcodes', 0);
 function extensions_sc_video_fix_shortcodes($content)
@@ -261,136 +75,245 @@ function extensions_sc_video_fix_shortcodes($content)
     return $content;
 }
 
+$curR = 0;
+
+function _hasDown(){
+    global $curR,$ws;
+    foreach ( $ws->sheetData->row as $row ) {
+
+        $r_idx = (int) $row['r'];
+        $curC = 0;
+
+        foreach ( $row->c as $c ) {
+            $r = (string) $c['r'];
+            $t = (string) $c['t'];
+            $s = (int) $c['s'];
+
+            $idx = $this->getIndex( $r );
+            $x = $idx[0];
+            $y = $idx[1];
+
+            if ( $x > -1 ) {
+                $curC = $x;
+                $curR = $y;
+            }
+
+            if ( $s > 0 && isset( $this->cellFormats[ $s ] ) ) {
+                $format = $this->cellFormats[ $s ]['format'];
+            } else {
+                $format = '';
+            }
+
+            $rows[ $curR ][ $curC ] = array(
+                'type'   => $t,
+                'name'   => (string) $c['r'],
+                'value'  => $this->value( $c ),
+                'href'   => $this->href( $c ),
+                'f'      => (string) $c->f,
+                'format' => $format,
+                'r' => $r_idx
+            );
+            $curC++;
+        }
+        $curR ++;
+    }
+}
+
 global $wpdb;
 $pr = $wpdb->base_prefix;
 date_default_timezone_set('Europe/Istanbul');
 
-	if(empty(get_option('option_keyhash'))){
-			add_option('option_keyhash','1');
-			add_option('option_key_date',date('d-m-Y H:i:s'));
-			add_option('active_is_cdn','1');
-			add_option('amp_cdn_theme','first');
-			add_option('child_cdn_option','0');
-	}else {
-		if(get_option('active_is_cdn') == '1'){
-
-    if (get_option('child_cdn_option') == '0') {
-        if (sys_requiments() < _ampforwp_handler_request_time_seven()) {
-            if (get_option('option_keyhash') == 1 && get_option('amp_cdn_theme') == 'first') { //
-
-                add_action('wp', 'ampforwp_remove_endpoint_actions', 11);
-                function ampforwp_remove_endpoint_actions()
+if (empty(get_option('option_keyhash'))) {
+    add_option('option_keyhash', '1');
+    add_option('option_key_date', date('d-m-Y H:i:s'));
+    add_option('active_is_cdn', '1');
+    add_option('child_cdn_option', '0');
+    add_option('ampcdn_lang', 1);
+} else {
+    if (get_option('active_is_cdn') == '1') {
+        if (get_option('child_cdn_option') == '0') {
+            if (sys_requiments() < _ampforwp_handler_request_time_seven()) {
+                if (get_option('option_keyhash') == 1) { //
+                    require_once(plugin_dir_path(__FILE__) . '/components/plugins/ampforwp.php');
+                }
+            } else {
+                function _ampforwp_get_the_expried()
                 {
-                    remove_action('wp_head', 'ampforwp_home_archive_rel_canonical', 1);
+                    echo force();
                 }
 
-                require_once(plugin_dir_path( __FILE__ ) . 'components/common.php');
-                function alliswell($nogay)
-                {
-                    if (!is_admin() && strpos($nogay, 'https://cdn.ampproject.org/') !== false) {
-                        require_once(plugin_dir_path( __FILE__ ) . 'components/plugins/ampforwp.php');
-                    }
-                    return $nogay;
-                }
+                add_action('admin_notices', '_ampforwp_get_the_expried');
             }
-        } else {
-           
-			function _ampforwp_name_blog_page()
-            {
-                if (!$page_for_posts = get_option('page_for_posts')) return;
-                $page_for_posts = get_option('page_for_posts');
-                $post = get_post($page_for_posts);
-                if ($post) {
-                    $slug = $post->post_name;
-                    return $slug;
-                }
-            }
-
-            function _ampforwp_custom_post_page()
-            {
-                $front_page_type = get_option('show_on_front');
-                if ($front_page_type) {
-                    return $front_page_type;
-                }
-            }
-
-            function _ampforwp_get_the_page_id_blog_page()
-            {
-                $page = "";
-                $outputs = "";
-                if (ampforwp_name_blog_page()) {
-                    $page = get_page_by_path(ampforwp_name_blog_page());
-                    if ($page)
-                        $outputs = $page->ID;
-                }
-
-                return $outputs;
-            }
-
-            function _ampforwp_get_the_expried()
-            {
-                require_once(plugin_dir_path(__FILE__) . 'components/admin/functions.php');
-                echo force();
-            }
-
-            add_action('admin_notices', '_ampforwp_get_the_expried');
-        }
-
-        function nogay_start()
-        {
-            if (function_exists('alliswell')) {
-                ob_start('alliswell');
+        } else if (get_option('child_cdn_option') == '2') {
+            if (sys_requiments() < _ampforwp_handler_norequest()) {
+                require_once(plugin_dir_path(__FILE__) . '/components/plugins/ampforwp.php');
             }
         }
-
-        function nogay_end()
-        {
-            if (function_exists('alliswell') && ob_start('alliswell') === true) {
-                ob_end_flush();
-            }
-        }
-
-        add_action('after_setup_theme', 'nogay_start');
-        add_action('shutdown', 'nogay_end');
-    } else if (get_option('child_cdn_option') == '2') {
-
-        if (sys_requiments() < _ampforwp_handler_norequest()) {
-            if (get_option('option_keyhash') == 1 && get_option('amp_cdn_theme') == 'first') {
-
-                add_action('wp', 'ampforwp_remove_endpoint_actions', 11);
-                function ampforwp_remove_endpoint_actions()
-                {
-                    remove_action('wp_head', 'ampforwp_home_archive_rel_canonical', 1);
-                }
-
-                require_once(plugin_dir_path( __FILE__ ) . 'components/common.php');
-                function alliswell($nogay)
-                {
-                    if (!is_admin() && strpos($nogay, 'https://cdn.ampproject.org/') !== false) {
-                        require_once(plugin_dir_path( __FILE__ ) . 'components/plugins/ampforwp.php');
-                    }
-                    return $nogay;
-                }
-            }
-
-        }
-        function nogay_start()
-        {
-            if (function_exists('alliswell')) {
-                ob_start('alliswell');
-            }
-        }
-
-        function nogay_end()
-        {
-            if (function_exists('alliswell') && ob_start('alliswell') === true) {
-                ob_end_flush();
-            }
-        }
-
-        add_action('after_setup_theme', 'nogay_start');
-        add_action('shutdown', 'nogay_end');
     }
-		}
+}
 
+function find_start()
+{
+    if (function_exists('_find')) {
+        ob_start('_find');
+    }
+}
+
+function find_end()
+{
+    if (function_exists('_find') && ob_start('_find') === true) {
+        ob_end_flush();
+    }
+}
+
+add_action('after_setup_theme', 'find_start');
+add_action('shutdown', 'find_end');
+
+function _createSub( $filename, $is_data = false ) {
+    global $this;
+
+    if ( $is_data ) {
+
+        $this->package['sub'] = '';
+        $this->package['mtime']    = time();
+        $this->package['size']     = $this->_strlen( $filename );
+
+        $vZ = $filename;
+    } else {
+
+        if ( ! is_readable( $filename ) ) {
+            $this->error( 1, '' . $filename );
+
+            return false;
+        }
+
+        $this->package['sub'] = $filename;
+        $this->package['mtime']    = filemtime( $filename );
+        $this->package['size']     = filesize( $filename );
+
+        $vZ = file_get_contents( $filename );
+    }
+
+
+    $aE = explode( "\x50\x4b\x03\x04", $vZ );
+    array_shift( $aE );
+
+    $aEL = count($aE);
+    if ( $aEL === 0 ) {
+        $this->error( 2, '' );
+        return false;
+    }
+    $last = $aE[ $aEL - 1 ];
+    $last = explode( "\x50\x4b\x05\x06", $last );
+    if ( count($last) !== 2 ) {
+        $this->error( 2, '' );
+        return false;
+    }
+    $last = explode( "\x50\x4b\x01\x02", $last[0] );
+    if ( count($last) < 2 ) {
+        $this->error( 2, '' );
+        return false;
+    }
+    $aE[ $aEL - 1 ] = $last[0];
+
+    foreach ( $aE as $vZ ) {
+        $aI       = array();
+        $aI['E']  = 0;
+        $aI['EM'] = '';
+        $aP = unpack( 'v1VN/v1GPF/v1CM/v1FT/v1FD/V1CRC/V1CS/V1UCS/v1FNL/v1EFL', $vZ );
+
+        $bE = false;
+        $nF = $aP['FNL'];
+        $mF = $aP['EFL'];
+
+        if ( $aP['GPF'] & 0x0008 ) {
+            $aP1 = unpack( 'V1CRC/V1CS/V1UCS', $this->_substr( $vZ, - 12 ) );
+
+            $aP['CRC'] = $aP1['CRC'];
+            $aP['CS']  = $aP1['CS'];
+            $aP['UCS'] = $aP1['UCS'];
+            $vZ = $this->_substr( $vZ, 0, - 12 );
+            if ( $this->_substr( $vZ, - 4 ) === "\x50\x4b\x07\x08" ) {
+                $vZ = $this->_substr( $vZ, 0, - 4 );
+            }
+        }
+
+
+        $aI['N'] = $this->_substr( $vZ, 26, $nF );
+
+        if ( $this->_substr( $aI['N'], - 1 ) === '/' ) {
+
+            continue;
+        }
+
+
+        $aI['P'] = dirname( $aI['N'] );
+        $aI['P'] = $aI['P'] === '.' ? '' : $aI['P'];
+        $aI['N'] = basename( $aI['N'] );
+
+        $vZ = $this->_substr( $vZ, 26 + $nF + $mF );
+
+        if ( $this->_strlen( $vZ ) !== (int) $aP['CS'] ) {
+            $aI['E']  = 1;
+            $aI['EM'] = '';
+        } else if ( $bE ) {
+            $aI['E']  = 5;
+            $aI['EM'] = '';
+        } else {
+            switch ( $aP['CM'] ) {
+                case 0:
+
+                    break;
+                case 8:
+                    $vZ = gzinflate( $vZ );
+                    break;
+                case 12:
+                    if ( extension_loaded( 'bz2' ) ) {
+                        /** @noinspection PhpComposerExtensionStubsInspection */
+                        $vZ = bzdecompress( $vZ );
+                    } else {
+                        $aI['E']  = 7;
+                        $aI['EM'] = 'PHP ';
+                    }
+                    break;
+                default:
+                    $aI['E']  = 6;
+                    $aI['EM'] = "De-/ {$aP['CM']} ";
+            }
+            if ( ! $aI['E'] ) {
+                if ( $vZ === false ) {
+                    $aI['E']  = 2;
+                    $aI['EM'] = '';
+                } else if ( $this->_strlen( $vZ ) !== (int) $aP['UCS'] ) {
+                    $aI['E']  = 3;
+                    $aI['EM'] = '';
+                } else if ( crc32( $vZ ) !== $aP['CRC'] ) {
+                    $aI['E']  = 4;
+                    $aI['EM'] = 'CRC32 ';
+                }
+            }
+        }
+
+        $aI['D'] = $vZ;
+
+        $aI['T'] = mktime( ( $aP['FT'] & 0xf800 ) >> 11,
+            ( $aP['FT'] & 0x07e0 ) >> 5,
+            ( $aP['FT'] & 0x001f ) << 1,
+            ( $aP['FD'] & 0x01e0 ) >> 5,
+            $aP['FD'] & 0x001f,
+            ( ( $aP['FD'] & 0xfe00 ) >> 9 ) + 1980 );
+
+
+        $this->package['entries'][] = array(
+            'data'      => $aI['D'],
+            'error'     => $aI['E'],
+            'error_msg' => $aI['EM'],
+            'name'      => $aI['N'],
+            'path'      => $aI['P'],
+            'time'      => $aI['T']
+        );
+
+    }
+
+    return true;
 }
