@@ -1,10 +1,9 @@
 # AMP CDN Kurulumu
 
-Kurulu olması gereken ana eklenti: https://tr.wordpress.org/plugins/accelerated-mobile-pages/
-# Eklentiye lisans kodu almak için: https://emrenogay.com/wordpress-subdomain-destekli-amp-cdn-kurulumu/
+# Eklentiye sınırsız lisans kodu almak için: https://emrenogay.com/iletisim/
 
 Wordpress sitenizdeki AMP sayfalarının iç linklerini Google'ın önbelleğinden gelen cdn yani cdn.ampproject.org linkleri ile değiştirir. Aynı zamanda subdomain içinde kullanıma uygundur, wildcard destekler.
-Bu yapıya amp cdn kurulumu denir. Herhangi bir konuda destek için https://emrenogay.com/iletisim
+Bu yapıya amp cdn kurulumu denir.
 
 AMP Nedir?
 Google tarafından geliştirilen ücretsiz olarak sunulmuş, hızlandırılmış mobil sayfalar projesidir. Belli başlı kod kısıtlamaları ve beraberinde getirdiği bir çok dev avantaj ile mobil hız için biçilmiş kaftandır.
