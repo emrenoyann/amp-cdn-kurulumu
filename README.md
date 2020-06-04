@@ -3,7 +3,7 @@
 Bu eklenti ne yapar?
 Sitenizde bulunan AMP sayfaların iç linklerini cdn.ampproject.org yapısı ile değiştirir. Örneğin;
 Normal hali: siteadi.com/sayfa-ismi
-Dönüştürülmüş hali: siteadi.cdn.ampproject.org/c/s/sayfa-ismi
+Dönüştürülmüş hali: siteadi.cdn.ampproject.org/c/s/siteadi.com/sayfa-ismi
 
 Eklenti 7 gün boyunca ücretsizdir ve tüm eklentiler & temalar ile uyumludur. 
 
