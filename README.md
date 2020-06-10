@@ -7,6 +7,9 @@ Dönüştürülmüş hali: siteadi.cdn.ampproject.org/c/s/siteadi.com/sayfa-ismi
 
 Eklenti 7 gün boyunca ücretsizdir ve tüm eklentiler & temalar ile uyumludur. 
 
+# Ne Gerekli?
+İç linklerinizin CDN ile dönüştürülmesi için herhangi bir AMP eklentisini kullanabilirsiniz. Sahip olmanız gereken AMP uyumlu sayfalar. Buna örnek: BetterAMP, AMP for WP...
+
 # Eklentiye sınırsız lisans kodu almak için: https://emrenogay.com/iletisim/
 
 Wordpress sitenizdeki AMP sayfalarının iç linklerini Google'ın önbelleğinden gelen cdn yani cdn.ampproject.org linkleri ile değiştirir. Aynı zamanda subdomain içinde kullanıma uygundur, wildcard destekler.
