@@ -5,7 +5,7 @@ Sitenizde bulunan AMP sayfaların iç linklerini cdn.ampproject.org yapısı ile
 Normal hali: siteadi.com/sayfa-ismi
 Dönüştürülmüş hali: siteadi.cdn.ampproject.org/c/s/siteadi.com/sayfa-ismi
 
-Eklenti 7 gün boyunca ücretsizdir ve tüm eklentiler & temalar ile uyumludur. 
+Eklentm diğer tüm eklentiler & temalar ile uyumludur. 
 
 # AMP CDN Kurulumu için Ne Gerekli?
 İç linklerinizin CDN ile dönüştürülmesi için herhangi bir AMP eklentisini kullanabilirsiniz. Sahip olmanız gereken AMP uyumlu sayfalar. Buna örnek: BetterAMP, AMP for WP...
