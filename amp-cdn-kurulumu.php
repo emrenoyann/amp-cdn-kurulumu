@@ -6,7 +6,7 @@
     Version: 1.5
     Author: Emre Nogay
     Author URI: https://emrenogay.com
-    License: MIT & Apache 2.0
+    License: Apache 2.0
 
     Copyright 2020 Emre NOGAY
 
