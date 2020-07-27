@@ -18,7 +18,7 @@ if (!function_exists('_ampforwp_get_author_page_url')) {
 function _find($finder)
 {
     $search = 'action="' . get_home_url() . '"';
-    $replace = 'action="' . _is_ssl() . createProject() . '/amp/"';
+    $replace = 'action="https://'  . createProject() . '/amp/"';
     if (strpos($finder, 'https://cdn.ampproject.org/') !== false) {
         $finder = str_replace('<a href="' . get_home_url(), '<a href="' . _is_ssl() . createProject(), $finder);
         $n = str_replace(['http:', 'https:'], ['', ''], get_home_url());
