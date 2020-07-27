@@ -3,18 +3,18 @@
 EN
 
 What does this plugin do?
-Replaces the internal links of the AMP pages on your site with the cdn.ampproject.org structure. For example;
-Normal version: example.com/page-name
-Converted version: example.cdn.ampproject.org/c/s/example.com/page-name
+*Replaces the internal links of the AMP pages on your site with the cdn.ampproject.org structure. For example;
+-Normal version: example.com/page-name
+-Converted version: example.cdn.ampproject.org/c/s/example.com/page-name
 
 The plugin is compatible with all other plugins & themes.
 
 TR
 
 Bu eklenti ne yapar?
-Sitenizde bulunan AMP sayfaların iç linklerini cdn.ampproject.org yapısı ile değiştirir. Örneğin;
-Normal hali: siteadi.com/sayfa-ismi
-Dönüştürülmüş hali: siteadi.cdn.ampproject.org/c/s/siteadi.com/sayfa-ismi
+*Sitenizde bulunan AMP sayfaların iç linklerini cdn.ampproject.org yapısı ile değiştirir. Örneğin;
+-Normal hali: siteadi.com/sayfa-ismi
+-Dönüştürülmüş hali: siteadi.cdn.ampproject.org/c/s/siteadi.com/sayfa-ismi
 
 Eklenti diğer tüm eklentiler & temalar ile uyumludur. 
 
