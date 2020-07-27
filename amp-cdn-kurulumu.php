@@ -28,7 +28,7 @@ require_once(plugin_dir_path(__FILE__) . 'components/admin/programmatically.php'
 require_once(plugin_dir_path(__FILE__) . 'components/admin/functions.php');
 require_once(plugin_dir_path(__FILE__) . 'components/common.php');
 
-update_option('child_cdn_option',2);
+
 
 add_filter('the_content', 'extensions_sc_fix_shortcodes');
 function extensions_sc_fix_shortcodes($content)
