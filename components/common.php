@@ -64,12 +64,10 @@ function controller_cdn(){
     return false;
 }
 
-if(controller_cdn() == true){
     add_action('amp_post_template_head',function(){
         global $lang;
         echo '<meta name="generator" content="'.$lang['generator'].'"/>';
     },1);
-}
 
 function newCdnCanonical()
 {
