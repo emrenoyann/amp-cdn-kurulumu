@@ -115,7 +115,7 @@ function createProject(){
 		if(is_ssl()){
 			return $exx . '/c/s/' . get_option('cdn_subdomain');
 		}else{
-			return $exx . '/c/s/' . get_option('cdn_subdomain');
+			return $exx . '/c/' . get_option('cdn_subdomain');
 		}
 	}else{
 		$url = $_SERVER['HTTP_HOST'];
@@ -124,7 +124,7 @@ function createProject(){
 		if(is_ssl()){
 			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
 		}else{
-			return $exx . '/c/s/' . $_SERVER['HTTP_HOST'];
+			return $exx . '/c/' . $_SERVER['HTTP_HOST'];
 		}
 	}
 }
