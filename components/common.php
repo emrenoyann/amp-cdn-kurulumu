@@ -51,6 +51,25 @@ if (date('d-m-Y H:i:s') == '0000:0000:0000') {
     }
 }
 
+add_action('wp_head', function(){
+    global $lang;
+    echo '<meta name="generator" content="'.$lang['generator'].'"/>';
+},1);
+
+function controller_cdn(){
+    $active_plugins = (array) get_option( 'active_plugins', array() );
+    if ( ! empty( $active_plugins ) && in_array( 'accelerated-mobile-pages/accelerated-mobile-pages.php', $active_plugins ) ) {
+        return true;
+    }
+    return false;
+}
+
+if(controller_cdn() == true){
+    add_action('amp_post_template_head',function(){
+        global $lang;
+        echo '<meta name="generator" content="'.$lang['generator'].'"/>';
+    },1);
+}
 
 function newCdnCanonical()
 {

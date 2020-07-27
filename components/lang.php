@@ -6,7 +6,7 @@ if(empty(get_option('ampcdn_lang'))){
 
 if (get_option('ampcdn_lang') == 1) {
     $lang = [
-        'dil_sec' => 'Dil Seçin',
+        'dil_sec' => 'Dil Seçin (Language)',
         'dil_aciklama' => 'Bu sayfa üzerinden dil değiştirebilirsiniz.',
         'menu1' => 'AMP CDN Kurulumu',
         'menu2' => 'AMP CDN Ayarları',
@@ -38,14 +38,17 @@ if (get_option('ampcdn_lang') == 1) {
         'soru1' => 'Eklenti Sadece AMP for WP ile mi Çalışıyor?',
         'cevap1' => 'Hayır. AMP sayfalara sahip tüm eklentilerde sorunsuz bir şekilde çalışmaktadır. Tek yapmanız gereken kurulum yapıp aktif etmek.',
         'soru2' => 'Subdomain Açtığımda Çalışır mı?',
-        'cevap2' => 'Evet çalışır. Sunucunuzda wildcard veya diğer adıyla joker subdomain aktifse kutuya sadece sub.domain.com şeklinde yazmanız yeterli eklentimiz sizin için her şeyi halledecektir. Eğer wildcard aktif değilse sunucu paneliniz üzerinden subdomain açıktan sonra domaini üstteki kutuya yazabilirsiniz.',
+        'cevap2' => 'Evet çalışır. Sunucunuzda wildcard veya diğer adıyla joker subdomain aktifse kutuya sadece <strong>sub.domain.com</strong> şeklinde yazmanız yeterli eklentimiz sizin için her şeyi halledecektir. Eğer wildcard aktif değilse sunucu paneliniz üzerinden subdomain açıktan sonra domaini üstteki kutuya yazabilirsiniz.',
         'soru3' => 'ClassiPress Teması ile Uyumlu mu?',
         'cevap3' => 'Evet, ClassiPress dahil tüm temalarla uyumludur ancak <b>bu eklenti</b>, alt bir eklenti olduğu
                         için kullandığınız asıl AMP eklentisinin ClassiPress ile uyumlu olması gerekir. Ayarlarını
                         yapmanız yeterli. Özel kurulumlar ve destek için <a href="https://emrenogay.com/iletisim/" target="_blank">ulaşabilirsiniz.</a>',
         'soru4' => 'Zararlı Kod Barındırıyor mu?',
         'cevap4' => 'Kesinlikle hayır. Zaten eklenti açık kaynak kodlu ve oldukça minimal bi yapıya sahiptir.',
-        'sona_erdi' => 'Kullandığınız AMP CDN Kurulumu eklentisinin 7 günlük deneme süresi <b>sona erdi.</b> Satın almak için <a target="_blank" href="https://emrenogay.com/iletisim/">iletişime</a> geçin.'
+        'sona_erdi' => 'Kullandığınız AMP CDN Kurulumu eklentisinin 7 günlük deneme süresi <b>sona erdi.</b> Satın almak için <a target="_blank" href="https://emrenogay.com/iletisim/">iletişime</a> geçin.',
+        'crash_report_notice' => '<strong>AMP CDN Kurulumu</strong> isimli eklentide bir sorun oluştu. Hata raporu gönderilemediği için site sağlığını olumsuz etkilememesi adına devre dışı bırakıldı.',
+        'false_manually' => 'AMP CDN Kurulumu eklentisi şuan çalışmıyor. Bunun sebebi aşağıdaki nedenlerden biri olabilir. Bir sorun olduğunu düşünüyorsanız emrenogay.com/iletisim adresinden iletişime geçebilirsiniz.<ul><li>Kaçak kullanım</li><li>Güncel olmayan sürüm</li><li>Diğer eklentiler ile çakışma</li></ul>',
+        'generator' => 'Bu sitenin AMP ve CDN (İç Link) kurulumu emrenogay.com tarafından yapılmıştır.'
     ];
 } else if (get_option('ampcdn_lang') == 2) {
     $lang = [
@@ -81,12 +84,15 @@ if (get_option('ampcdn_lang') == 1) {
         'soru1' => 'Is it Compatible with All AMP Plugins?',
         'cevap1' => 'It works seamlessly in all plugins with AMP pages. All you have to do is install and activate it.',
         'soru2' => 'Does Subdomain Work When I Open It?',
-        'cevap2' => 'Yes it works. If wildcard subdomain is active on your server, simply type in the box as sub.domain.com and our plugin will do everything for you. If wildcard is not active, you can type the domain in the top box after subdomain is open via your server panel.',
+        'cevap2' => 'Yes it works. If wildcard subdomain is active on your server, simply type in the box as <strong>sub.domain.com</strong> and our plugin will do everything for you. If wildcard is not active, you can type the domain in the top box after subdomain is open via your server panel.',
         'soru3' => 'Is it Compatible with ClassiPress Theme?',
         'cevap3' => 'Yes, it is compatible with all themes including ClassiPress but this plugin is a sub-plugin. The actual AMP plugin you use for must be compatible with ClassiPress settings just do it. <a href="https://emrenogay.com/iletisim">You can reach for special setups and support.</a>',
         'soru4' => 'Does it Contain Malicious Code?',
         'cevap4' => 'No way. The plugin is already open source and has a very minimal structure.',
-        'sona_erdi' => 'The 7-day trial period of the AMP CDN Setup plug-in you are using has expired. Please continue your <a href="https://emrenogay.com/iletisim" target="_blank">information to purchase.</a>'
+        'sona_erdi' => 'The 7-day trial period of the AMP CDN Setup plug-in you are using has expired. Please continue your <a href="https://emrenogay.com/iletisim" target="_blank">information to purchase.</a>',
+        'crash_report_notice' => 'There was a problem with the plugin. The AMP CDN Setup plug-in has been disabled because the error report could not be sent.',
+        'false_manually' => 'The AMP CDN Setup plugin does not currently work. The reason for this may be one of the reasons. <ul> <li> Illegal use </li> <li> Current version(not) </li> <li> Conflict with other plugins</li></ul>',
+        'generator' => 'AMP and CDN (Internal Link) installation of this site was made by emrenogay.com'
     ];
 }
 

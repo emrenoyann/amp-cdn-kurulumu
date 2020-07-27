@@ -70,9 +70,9 @@ function handler_request()
 
 function ampforwp_get_setting_handler()
 {
-    if (get_option('child_cdn_option') == '0') {
+    if (get_option('child_cdn_option') == 0) {
         return strrev('emened');
-    } else if (get_option('child_cdn_option') == '2') {
+    } else if (get_option('child_cdn_option') == 2) {
         return strrev('zisrinis');
     }
 }
@@ -148,18 +148,24 @@ function sys_requiments()
 }
 
 
+
+
+
 function post($ss = array(), $kk = array())
 {
         $l['site'] = $ss;
         if (substr($l['site'], 0, 4) == "www."): $l['site'] = substr($l['site'], 4); endif;
-        $arr = ['b' => 'NOGAY-', 'sq' => '-P020', 'm' => 'md5', 's' => 'sha1'];
+        $arr = ['b' => 'NGY-', 'sq' => '-P020', 'm' => 'md5', 's' => 'sha1'];
         $l['hash'] = wordwrap(strtoupper($arr['s'] ($arr['s'] ($arr['s'] ($arr['s'] ($arr['m'] ($arr['s'] ($arr['s'] ($arr['m'] ($l['site']))))))))), 5, '-', true);
         $od = $l['hash'];
         $c = strrev($od);
         $bcs = $arr['b'] . $c . $arr['sq'];
         if ($bcs == $kk) {
+           // update_option('cdn_license_key',$bcs);
             return true;
         } else {
             return false;
         }
 }
+
+

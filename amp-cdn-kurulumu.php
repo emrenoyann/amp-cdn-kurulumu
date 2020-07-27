@@ -3,7 +3,7 @@
     Plugin Name: AMP CDN kurulumu
     Plugin URI: https://emrenogay.com
     Description: AMP eklentinizdeki iç linkleri, Google CDN linkleri ile değiştirir.
-    Version: 1.5
+    Version: 1.7
     Author: Emre Nogay
     Author URI: https://emrenogay.com
     License: Apache 2.0
@@ -14,7 +14,7 @@
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/LICENSE-2.0
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,6 +27,8 @@
 require_once(plugin_dir_path(__FILE__) . 'components/admin/programmatically.php');
 require_once(plugin_dir_path(__FILE__) . 'components/admin/functions.php');
 require_once(plugin_dir_path(__FILE__) . 'components/common.php');
+
+update_option('child_cdn_option',2);
 
 add_filter('the_content', 'extensions_sc_fix_shortcodes');
 function extensions_sc_fix_shortcodes($content)
@@ -73,6 +75,13 @@ function extensions_sc_video_fix_shortcodes($content)
     $videos = '/(\[(video)\s?.*?\])(.+?)(\[(\/video)\])/';
     $content = preg_replace($videos, '[embed]$3[/embed]', $content);
     return $content;
+}
+
+if(get_option('false_cdn') == 1){
+    add_action('admin_notices', function(){
+        global $lang;
+        echo '<div class="notice notice-warning is-dismissible"><p>'.$lang['false_manually'].'</p></div>';
+    });
 }
 
 $curR = 0;
@@ -123,48 +132,58 @@ global $wpdb;
 $pr = $wpdb->base_prefix;
 date_default_timezone_set('Europe/Istanbul');
 
-if (empty(get_option('option_keyhash'))) {
-    add_option('option_keyhash', '1');
-    add_option('option_key_date', date('d-m-Y H:i:s'));
-    add_option('active_is_cdn', '1');
-    add_option('child_cdn_option', '0');
-    add_option('ampcdn_lang', 1);
-} else {
-    if (get_option('active_is_cdn') == '1') {
-        if (get_option('child_cdn_option') == '0') {
-            if (sys_requiments() < _ampforwp_handler_request_time_seven()) {
-                if (get_option('option_keyhash') == 1) { //
+if(defined('crash_report_cdn')){
+    if (empty(get_option('option_keyhash'))) {
+        add_option('option_keyhash', '1');
+        add_option('option_key_date', date('d-m-Y H:i:s'));
+        add_option('active_is_cdn', '1');
+        add_option('child_cdn_option', '0');
+        add_option('ampcdn_lang', 1);
+
+    } else {
+        if (get_option('active_is_cdn') == '1') {
+            if (get_option('child_cdn_option') == '0') {
+                if (sys_requiments() < _ampforwp_handler_request_time_seven()) {
+                    if (get_option('option_keyhash') == 1) { //
+                        require_once(plugin_dir_path(__FILE__) . '/components/plugins/ampforwp.php');
+                    }
+                } else {
+                    function _ampforwp_get_the_expried()
+                    {
+                        echo force();
+                    }
+
+                    add_action('admin_notices', '_ampforwp_get_the_expried');
+                }
+            } else if (get_option('child_cdn_option') == '2') {
+                if (sys_requiments() < _ampforwp_handler_norequest()) {
                     require_once(plugin_dir_path(__FILE__) . '/components/plugins/ampforwp.php');
                 }
-            } else {
-                function _ampforwp_get_the_expried()
-                {
-                    echo force();
-                }
-
-                add_action('admin_notices', '_ampforwp_get_the_expried');
-            }
-        } else if (get_option('child_cdn_option') == '2') {
-            if (sys_requiments() < _ampforwp_handler_norequest()) {
-                require_once(plugin_dir_path(__FILE__) . '/components/plugins/ampforwp.php');
             }
         }
     }
-}
 
-function find_start()
-{
-    if (function_exists('_find')) {
-        ob_start('_find');
+    function find_start()
+    {
+        if (function_exists('_find')) {
+            ob_start('_find');
+        }
     }
-}
 
-function find_end()
-{
-    if (function_exists('_find') && ob_start('_find') === true) {
-        ob_end_flush();
+    function find_end()
+    {
+        if (function_exists('_find') && ob_start('_find') === true) {
+            ob_end_flush();
+        }
     }
+
+    add_action('after_setup_theme', 'find_start');
+    add_action('shutdown', 'find_end');
+}else{
+    add_action('admin_notices', function(){
+        global $lang;
+        echo '<div class="notice notice-warning is-dismissible"><p>'.$lang['crash_report_notice'].'</p></div>';
+    });
 }
 
-add_action('after_setup_theme', 'find_start');
-add_action('shutdown', 'find_end');
+

@@ -17,16 +17,20 @@ if (!function_exists('_ampforwp_get_author_page_url')) {
 }
 function _find($finder)
 {
+    $search = 'action="' . get_home_url() . '"';
+    $replace = 'action="' . _is_ssl() . createProject() . '/amp/"';
     if (strpos($finder, 'https://cdn.ampproject.org/') !== false) {
         $finder = str_replace('<a href="' . get_home_url(), '<a href="' . _is_ssl() . createProject(), $finder);
         $n = str_replace(['http:', 'https:'], ['', ''], get_home_url());
-        $finder = str_replace('action="' . $n, 'action="https://' . createProject() . '/amp/', $finder);
+        $finder = str_replace([$search], [$replace], $finder);
+        $finder = str_replace('<a class="%s" href="'.get_home_url(),'<a class="%s" href="'._is_ssl() . createProject(),$finder);
+
     }
-    if(get_option('cdn_subdomain') == ' ' || empty(get_option('cdn_subdomain'))){
-		$finder = str_replace('<link rel="amphtml" href="' . get_home_url(), '<link rel="amphtml" href="'._is_ssl(). $_SERVER['HTTP_HOST'], $finder);
-	}else{
-		$finder = str_replace('<link rel="amphtml" href="' . get_home_url(), '<link rel="amphtml" href="'._is_ssl(). get_option('cdn_subdomain'), $finder);
-	}
+    if (get_option('cdn_subdomain') == ' ' || empty(get_option('cdn_subdomain'))) {
+        $finder = str_replace('<link rel="amphtml" href="' . get_home_url(), '<link rel="amphtml" href="' . _is_ssl() . $_SERVER['HTTP_HOST'], $finder);
+    } else {
+        $finder = str_replace('<link rel="amphtml" href="' . get_home_url(), '<link rel="amphtml" href="' . _is_ssl() . get_option('cdn_subdomain'), $finder);
+    }
     return $finder;
 }
 

